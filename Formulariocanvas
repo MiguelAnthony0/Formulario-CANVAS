@@ -1,0 +1,106 @@
+<DOCTYPE !html>
+    <html lang="España">
+        <head>
+            <meta charset="UTF-8">
+            <title>PRACTICA FORMULARIO CON CANVAS</title>
+        </head>
+       <style>
+            input:focus{
+                background-color: blue;
+                color: white;
+    
+    
+            }
+            textarea:focus{
+                background-color: blue;
+                color: white;
+    
+    
+            }
+            body {
+                background-color: bisque;
+            }
+            #boton{
+                background-color: blue;
+            }
+            #boton:hover{
+                background-color: blue;
+            }
+            #adeandel
+            {
+                background-color: blue;
+            }
+            
+            
+    
+        </style>
+    
+    <body>
+        <canvas id="adeandel"  width="100" height="100"></canvas><br>  
+        <script >
+            var c = document.getElementById("adeandel");
+            var ctx = c.getContext("2d");
+            ctx.moveTo(25, 100);
+            ctx.lineTo(100, 100);
+            ctx.moveTo(60, 100);
+            ctx.arc(50,100,25,3,2* Math.PI);
+            ctx.moveTo(25, 100);
+            ctx.lineTo(100, 100);
+            ctx.lineTo(50, 0);
+            ctx.lineTo(0, 100);
+            ctx.stroke();
+        </script>
+        
+        
+        <form id="practica" action="formulario.php" method="post">
+            <h1>DATOS DEL ALUMNO:</h1>
+  <fieldset>
+    <legend> Datos Personales</legend>
+    <label for="nombre">Nombre: </label><input type="text" id="nombre" name="nombre" required><br>
+    <label for="fecha">Fecha de nacimiento: </label><input type="date" id="fecha" name="fecha"><br>
+    <label for="direccion">Dirección: </label><input type="text" id="direccion" name="direccion "><br>
+    <label for="tlf">Telefono </label><input type="number" id="tlf" name="tlf"><br>
+    <label for="email">Email: </label><input type="email" id="email" name="email"><br>
+</fieldset>
+<fieldset>
+    <legend> Datos Matricula:</legend>
+    Selecciona el curso: 
+    <select name="asignaturas" id="asignaturas">
+    <option value="DAM">DAM</option>
+    <option value="DAW">DAW</option>
+    <option value="ASIR">ASIR</option>
+  </select><br>
+
+    
+      Selecciona el turno:
+      <input type="radio" id="Diurno" name="turno" value="Diurno">
+      <label for="Diurno"> Diurno</label>
+      <input type="radio" id="Tarde" name="turno" value="Tarde">
+      <label for="Tarde"> Tarde</label>
+      <input type="radio" id="Vespertino" name="turno" value="Vespertino">
+      <label for="Vespertino">Vespertino</label><br>
+        <label for="comentario">Observaciones: </label>
+        <textarea id="comentario" name="Escriba aqui sus comentarios" rows="5" cols="40"></textarea><br>
+    </fieldset><br>     
+        
+        
+        <input id="boton" type="submit" value="Enviar datos">
+        <input id="boton" type="reset" value="Limpiar los datos"></br>
+    </form>
+    <script>
+        document.getElementById('Tarde').onclick=pintar;
+        function pintar(){
+           document.getElementById('practica').style.backgroundColor ="orange";
+        };
+        document.getElementById('Diurno').onclick=colorear;
+        function colorear(){
+           document.getElementById('practica').style.backgroundColor ="bisque";
+        };
+        document.getElementById('Vespertino').onclick=tpm;
+        function tpm(){
+           document.getElementById('practica').style.backgroundColor ="grey";
+        };
+    </script>
+</body>
+
+</html>
